@@ -1,0 +1,17 @@
+@model List<int>
+
+@{
+    ViewData["Title"] = "Prime Numbers Result";
+}
+
+<h2>Prime Numbers Result</h2>
+
+<p>Prime numbers up to your input:</p>
+<ul>
+    @foreach (var prime in Model)
+    {
+        <li>@prime</li>
+    }
+</ul>
+
+<a href="/">Back</a>

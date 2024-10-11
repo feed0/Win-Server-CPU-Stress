@@ -1,0 +1,11 @@
+@{
+    ViewData["Title"] = "Server CPU Stress Test";
+}
+
+<h2>Server CPU Stress Test</h2>
+
+<form method="post" action="/Home/CheckPrimes">
+    <label for="number">Input an integer:</label>
+    <input type="number" id="number" name="number" required>
+    <button type="submit">Run</button>
+</form>
