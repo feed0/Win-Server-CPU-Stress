@@ -17,16 +17,17 @@ namespace Controllers
             return View("Results", primes);
         }
 
-        /**
-            * Get all prime numbers up to a given number
-            * @param max The maximum number to check
-            * @return A list of all prime numbers up to the input
-            *
-            * This method is not efficient, but it is simple and easy to understand.
-            * It checks if each number is prime using the IsPrime method.
-            * If the number is prime, it is added to the list of primes.
-            * Finally, the list of primes is returned.
-        */
+        /// <summary>
+        /// Get all prime numbers up to a given number.
+        /// </summary>
+        /// <param name="max">The maximum number to check.</param>
+        /// <returns>A list of all prime numbers up to the input.</returns>
+        /// <remarks>
+        /// This method is not efficient, but it is simple and easy to understand.
+        /// It checks if each number is prime using the IsPrime method.
+        /// If the number is prime, it is added to the list of primes.
+        /// Finally, the list of primes is returned.
+        /// </remarks>
         private List<int> GetPrimesUpTo(int max)
         {
             var primes = new List<int>();
@@ -40,16 +41,17 @@ namespace Controllers
             return primes;
         }
 
-        /**
-            * Check if a number is prime
-            * @param num The number to check
-            * @return True if the number is prime, false otherwise
-            * 
-            * This method is not efficient, but it is simple and easy to understand.
-            * It checks if the number is divisible by any number from 2 to the square root of the number.
-            * If it is divisible by any of these numbers, then it is not prime.
-            * If it is not divisible by any of these numbers, then it is prime, finally.
-        */
+        /// <summary>
+        /// Check if a number is prime.
+        /// </summary>
+        /// <param name="num">The number to check.</param>
+        /// <returns>True if the number is prime, false otherwise.</returns>
+        /// <remarks>
+        /// This method is not efficient, but it is simple and easy to understand.
+        /// It checks if the number is divisible by any number from 2 to the square root of the number.
+        /// If it is divisible by any of these numbers, then it is not prime.
+        /// If it is not divisible by any of these numbers, then it is prime.
+        /// </remarks>
         private bool IsPrime(int num)
         {
             if (num < 2) return false;
