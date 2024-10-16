@@ -23,7 +23,10 @@ or 2. via Nginx using a reverse proxy nginx.conf file.
 ### b) Linux
 - Nginx; 
 - .NET 8.0+ SDK in order to publish the webapp; 
-- No hookup: for persistent serving without a need for an open bash use: `nohup dotnet server-cpu-stress.dll &`
+- No hookup: for persistent serving without a need for an open bash use: 
+```bash
+nohup dotnet server-cpu-stress.dll &
+```
 
 ## Main files
 
@@ -118,8 +121,7 @@ dotnet publish -c Release
 ```
 
 b) Publishing in a specific path.
-
-    That may be `C:\published\server-cpu-stress`
+That may be `C:\published\server-cpu-stress`
 
 ```bash
 dotnet publish -c Release -o <output-directory>
@@ -162,7 +164,9 @@ And finally make sure your pool's `.NET CLR version` is set to `No Managed Code`
 ## Serving with Nginx and revers proxy
 
 ### Install .NET 8.0 SDK
-`sudo yum install -y dotnet-sdk-8.0`
+```bash
+sudo yum install -y dotnet-sdk-8.0
+```
 
 ### Nginx
 
@@ -184,7 +188,10 @@ sudo systemctl enable nginx
 ```
 
 #### Configure the Nginx reverse proxy
-With ngix.config open `sudo nano /etc/nginx/nginx.conf`
+Open the .congf file
+```bash
+sudo nano /etc/nginx/nginx.conf
+```
 
 ```bash
 server {
