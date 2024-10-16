@@ -218,7 +218,9 @@ server {
 ```
 
 #### Restart
-`sudo systemctl restart nginx`
+```bash
+sudo systemctl restart nginx
+```
 
 #### Run locally
 ```bash 
