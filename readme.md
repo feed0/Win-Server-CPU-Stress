@@ -51,7 +51,8 @@ private bool IsPrime(int num)
         if (num % i == 0) return false;
     }
     return true;
-}```   
+}
+```   
 
 2. GetPrimesUpTo() - which calls IsPrime()
 ```C#
@@ -77,7 +78,8 @@ private List<int> GetPrimesUpTo(int max)
         }
     }
     return primes;
-}```
+}
+```
 
 ### Views/Home
 
@@ -95,7 +97,8 @@ The only change made was:
 ```C#
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");```
+    pattern: "{controller=Home}/{action=Index}/{id?}");
+```
 
 ## Publish to IIS on Windows Server
 
@@ -103,21 +106,24 @@ app.MapControllerRoute(
 1. Build
 I personally suggest `C:\projects\server-cpu-stress` as the webapp directory.
 ```bash
-dotnet build <webapp-directory>```
+dotnet build <webapp-directory>
+```
 
 2. Publish
 Choose either:
 
 a) Publishing without a path.
 ```bash
-dotnet publish -c Release```
+dotnet publish -c Release
+```
 
 b) Publishing in a specific path.
 
     That may be `C:\published\server-cpu-stress`
 
 ```bash
-dotnet publish -c Release -o <output-directory>```
+dotnet publish -c Release -o <output-directory>
+```
 
 ### Running on IIS
 
@@ -162,17 +168,20 @@ And finally make sure your pool's `.NET CLR version` is set to `No Managed Code`
 
 #### Install
 ```bash
-sudo dnf install nginx -y```
+sudo dnf install nginx -y
+```
 
 #### Publish the webapp code
 Publishing without a path.
 ```bash
-dotnet publish -c Release```
+dotnet publish -c Release
+```
 
 #### Start Nginx
 ```bash 
 sudo systemctl start nginx
-sudo systemctl enable nginx```
+sudo systemctl enable nginx
+```
 
 #### Configure the Nginx reverse proxy
 With ngix.config open `sudo nano /etc/nginx/nginx.conf`
@@ -198,12 +207,14 @@ server {
     error_page 500 502 503 504 /50x.html;
     location = /50x.html {
     }
-}```
+}
+```
 
 #### Restart
 `sudo systemctl restart nginx`
 
 #### Run locally
 ```bash 
-dotnet run --project server-cpu-stress.csproj```
+dotnet run --project server-cpu-stress.csproj
+```
 
